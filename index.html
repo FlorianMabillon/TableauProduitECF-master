@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./app/Css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="./app/JS/classProduit.js" defer></script>
+    <script src="./app/JS/fonction.js" defer></script>
+    <script src="./app/JS/app.js" defer></script>
+</head>
+
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Promotion</th>
+                <th scope="col">Remise</th>
+            </tr>
+
+        </thead>
+        <tbody id="listeProduit">
+            <template id="template">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+    <label for="alphaCheck">Ordre alphabetique</label>
+    <input type="checkbox" name="alphaCheck" id="alphaCheck">
+    <label for="promoCheck">Promo</label>
+    <input type="checkbox" name="promoCheck" id="promoCheck">
+    <label for="remiseCheck">Remise</label>
+    <input type="checkbox" name="remiseCheck" id="remiseCheck">
+    <button id="btnParametre">modifier</button>
+
+
+    <p>les remises sont :</p>
+    <ul id="remise"></ul>
+
+    <div id="modifierParametre">
+        <form action="">
+            <h2>Modifier</h2>
+            <label for="choixModifierArticle">Choisir l'article à modifier</label>
+                <select name="choixModifierArticle" id="choixModifierArticle">
+
+                </select>               
+            <label for="promoModifier">Choix de la promotion</label>
+            <select name="promoModifier" id="promoModifier">
+                <option value="Oui">Oui</option>
+                <option value="Non">Non</option>
+            </select>
+            <label for="choixRemise">Modifier la remise</label>
+            <input type="checkbox" name="choixRemise" id="choixRemise">
+            <label for="valeurRemise">modifier la valeur de la remise</label>
+            <input type="number" name="valeurRemise" id="valeurRemise" min="1">
+        </form>
+    </div>
+
+
+</body>
+
+</html>
