@@ -51,22 +51,20 @@
     <p>les remises sont :</p>
     <ul id="remise"></ul>
 
-    <div id="modifierParametre">
+    <div id="formulaire">
         <form action="">
             <h2>Modifier</h2>
             <label for="choixModifierArticle">Choisir l'article à modifier</label>
                 <select name="choixModifierArticle" id="choixModifierArticle">
 
                 </select>               
-            <label for="promoModifier">Choix de la promotion</label>
-            <select name="promoModifier" id="promoModifier">
-                <option value="Oui">Oui</option>
-                <option value="Non">Non</option>
-            </select>
+            <label for="promoModifier">promotion</label>
+            <input type="checkbox" name="" id="promoModifier">
             <label for="choixRemise">Modifier la remise</label>
             <input type="checkbox" name="choixRemise" id="choixRemise">
-            <label for="valeurRemise">modifier la valeur de la remise</label>
-            <input type="number" name="valeurRemise" id="valeurRemise" min="1">
+            <input type="number" name="valeurRemise" id="valeurRemise" min="0" placeholder="valeur de la remise">
+            <button id="btnChange">Appliquer les changements</button>
+            <button id="btnAnnuler">Annuler</button>
         </form>
     </div>
 

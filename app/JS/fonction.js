@@ -14,8 +14,6 @@ function creerTableau(){
 
         ajoutTable.appendChild(clone);
     })
-
-    
 }
 // creation d'un filtre pour les promotions
 function filtrerPromo(){
@@ -104,12 +102,65 @@ function filtrerAlpha(){
     })
 }
 
+// fonction lié au formulaire
 // function formulaire(){
-//     choixModifierArticle.innerHTML = "";
-    
-//     for(let i = 0; i < tableauProduits.length; i++) {
-//         let option = tableauProduits[i];
-//         select.innerHTML += "<option value=\"" + option + "\">" + option + "</option";
-//     }
+
+//     afficherNomModifierProduits()
+//     choixPromotion()
+//     cocherRemiseModifier()
 // }
+
+function afficherNomModifierProduits(){
+    for(let i = 0; i < tableauProduits.length; i++) {
+        let optn = tableauProduits[i].name;
+        let el = document.createElement("option")
+        el.textContent = optn;
+        el.value = optn;
+        
+        choixModifierArticle.appendChild(el);   
+    }
+}
+function choixPromotion(){
+    if(tableauProduits[i].promotion=="Non"){
+        promoModifier.checked=false;
+    } else {
+        promoModifier.checked=true;
+    }
+    if(tableauProduits[i].discount=="Non"){
+        choixRemise.checked=false;
+        valeurRemise.value="0"
+    } else {
+        
+    }
+}
+
+function cocherRemiseModifier() {
+    choixRemise.addEventListener("click", () => {
+        if(choixRemise.checked){
+            valeurRemise.style.visibility = 'visible';
+        } else {
+            valeurRemise.style.visibility = 'hidden';
+        }
+    })
+}
+
+function getInfos(e) {
+    for(let i = 0; i < tableauProduits.length; i++) {
+        if (tableauProduits[i].name==e.target.value) {
+            if (tableauProduits[i].promotion=="Non") {
+                promoModifier.checked=false;
+            } else {
+                promoModifier.checked=true;
+            }
+            if(tableauProduits[i].discount=="Non"){
+                valeurRemise.value="0"
+            }else{
+                valeurRemise.value=tableauProduits[i].discount;
+            }
+        }
+    }
+    
+}
+
+
 

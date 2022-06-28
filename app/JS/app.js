@@ -9,8 +9,8 @@ const choixModifierArticle = document.querySelector('#choixModifierArticle');
 const promoModifier = document.querySelector('#promoModifier');
 const choixRemise = document.querySelector('#choixRemise');
 const valeurRemise = document.querySelector('#valeurRemise');
-let templateFormulaire = document.querySelector('#templateFormulaire')
-
+const btnChange = document.querySelector('#btnChange');
+const btnAnnuler = document.querySelector('#btnAnnuler')
 
 
 let produit1 = new Product("MICHAËL GREGORIO", "spectacle rodez",43.00, "Non", "Non");
@@ -24,12 +24,24 @@ const template = document.querySelector('#template');
 
 let tableauProduits = [produit1,produit2,produit3,produit4,produit5];
 
+let i = 0;
+let iModif = 0;
 // creation du tableau avec les produits
 creerTableau();
 
 filtrerPromo();
 filtrerRemise();
 filtrerAlpha();
+afficherNomModifierProduits();
+cocherRemiseModifier();
+choixPromotion()
 
+choixModifierArticle.addEventListener("change", getInfos)
 
-// btnParametre.addEventListener("click", formulaire())
+btnChange.addEventListener('click', () => {
+    
+    if(promoModifier.checked == true){
+        console.log(choixModifierArticle.value);
+        tableauProduits[iModif].promotion="Oui"
+    }
+})
