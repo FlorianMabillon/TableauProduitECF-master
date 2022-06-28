@@ -1,4 +1,3 @@
-
 // var assigné au html
 const promoCheck = document.querySelector('#promoCheck');
 const remiseCheck = document.querySelector('#remiseCheck');
@@ -36,12 +35,27 @@ afficherNomModifierProduits();
 cocherRemiseModifier();
 choixPromotion()
 
-choixModifierArticle.addEventListener("change", getInfos)
 
-btnChange.addEventListener('click', () => {
+choixModifierArticle.addEventListener('change', getInfos)
+btnChange.addEventListener('click', (e) => {
+    e.preventDefault()
     
-    if(promoModifier.checked == true){
-        console.log(choixModifierArticle.value);
-        tableauProduits[iModif].promotion="Oui"
-    }
+    tableauProduits.forEach((produit) =>{
+        if(produit.name == choixModifierArticle.value){
+            ajoutTable.innerHTML=""
+            if(promoModifier.checked){
+                produit.promotion="Oui"
+            } else{
+                produit.promotion="Non"
+            }
+            produit.discount = valeurRemise.value
+            creerTableau();
+        }
+
+
+    })
+    // if(promoModifier.checked == true){
+
+    //     tableauProduits[iModif].promotion="Oui"
+    // }
 })
